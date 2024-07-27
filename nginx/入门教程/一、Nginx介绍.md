@@ -16,7 +16,7 @@ Nginx (engine x) 是一个高性能的HTTP和反向代理web服务器，同时�
 
 
 
-![img](一、Nginx介绍.assets/1690639896564-b75d5116-ddaf-47e4-b151-d3e9a7fac9d7.png)
+![img](image/1690639896564-b75d5116-ddaf-47e4-b151-d3e9a7fac9d7.png)
 
 
 
@@ -26,7 +26,7 @@ Nginx (engine x) 是一个高性能的HTTP和反向代理web服务器，同时�
 
 
 
-![img](一、Nginx介绍.assets/1690639976609-3d712879-5c02-4bf7-a56f-2e93e4edb96c.jpeg)
+![img](image/1690639976609-3d712879-5c02-4bf7-a56f-2e93e4edb96c.jpeg)
 
 
 
@@ -36,7 +36,7 @@ Nginx (engine x) 是一个高性能的HTTP和反向代理web服务器，同时�
 
 
 
-![img](一、Nginx介绍.assets/1690640062461-792ad01b-918d-4526-83a0-5be37b1cf11d.jpeg)
+![img](image/1690640062461-792ad01b-918d-4526-83a0-5be37b1cf11d.jpeg)
 
 
 

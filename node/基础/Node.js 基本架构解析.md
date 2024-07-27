@@ -14,7 +14,7 @@
 
 ​     说白话就是，Node.js 给 JavaScript 提供了一个平台，让 JavaScript 可以调用一些 C/C++ 的接口，这大大扩展了 JavaScript 的能力，进而使 JavaScript 有了后端开发的能力。以下是 Node.js 的工作流程：
 
-![](Node.js 基本架构解析.assets/l6syiq2dazcac_36af0a89a9a046e8b90f07f3da2d95c1-1707103197678-2.png)
+![](image/l6syiq2dazcac_36af0a89a9a046e8b90f07f3da2d95c1-1707103197678-2.png)
 
   ps：Node.js 的版本 已经到 15 了，双数是稳定版，单数是非稳定版，Node 8 可能不太支持 Vue3，建议使用 Node 10 或 12。至于 Node.js 的安装，可以到 Node 官网 直接下载安装包，傻瓜式安装就行了，安装完毕之后在命令行输入 node -v 后，如果能显示当前版本即表示安装成功。
 
@@ -24,7 +24,7 @@
 
 ​     Node.js 主要有 Node Standard Library、Node Bindings、V8、Libuv 四部分，架构图如下：
 
-![](Node.js 基本架构解析.assets/l6syiq2dazcac_1ae12c6017134f09ba53516165731d68.png)
+![](image/l6syiq2dazcac_1ae12c6017134f09ba53516165731d68.png)
 
 Node Standard Library 是 Node 专门提供给开发人员使用的标准库，如 Http，fs 等模块。
 
@@ -86,7 +86,7 @@ http_parser、OpenSSL、zlib 等：提供包括 http 解析、SSL、数据压缩
 
 
 
-​     为啥是异步？因为即便是 SSD 的访问相较于高速的 CPU，仍然是慢速设备。于是基于 事件驱动 的 IO 模型就应运而生，解决了高速设备同步等待慢速设备或访问的问题。这不是 libuv 的独创，linux kernel 原生支持的 NIO也是这个思路。 但 libuv 统一了网络访问，文件访问，做到了跨平台。![image](Node.js 基本架构解析.assets/l6syiq2dazcac_49c3e23848f64944949808a0774a82d0.png)
+​     为啥是异步？因为即便是 SSD 的访问相较于高速的 CPU，仍然是慢速设备。于是基于 事件驱动 的 IO 模型就应运而生，解决了高速设备同步等待慢速设备或访问的问题。这不是 libuv 的独创，linux kernel 原生支持的 NIO也是这个思路。 但 libuv 统一了网络访问，文件访问，做到了跨平台。![image](image/l6syiq2dazcac_49c3e23848f64944949808a0774a82d0.png)
 
 
 
@@ -106,4 +106,4 @@ http_parser、OpenSSL、zlib 等：提供包括 http 解析、SSL、数据压缩
 
 ​     V8 是目前商用的执行 JavaScript 最快的一个引擎，它的功能有很多：将 JavaScript 源代码变成本地代码并执行、维护 JavaScript 的调用栈，确保 JavaScript 函数的执行顺序、负责内存管理，为所有对象分配内存、垃圾回收，重复利用无用的内存、实现JS的标准库。
 
-![image](Node.js 基本架构解析.assets/l6syiq2dazcac_9e3c73f6e2734bd1a6c7acb0f2e13f7c.png)
+![image](image/l6syiq2dazcac_9e3c73f6e2734bd1a6c7acb0f2e13f7c.png)

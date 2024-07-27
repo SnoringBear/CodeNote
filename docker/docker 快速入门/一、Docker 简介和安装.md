@@ -20,7 +20,7 @@ Docker 是一个应用打包、分发、部署的工具
 **打包**：就是把你软件运行所需的依赖、第三方库、软件打包到一起，变成一个安装包
 **分发**：你可以把你打包好的“安装包”上传到一个镜像仓库，其他人可以非常方便的获取和安装
 **部署**：拿着“安装包”就可以一个命令运行起来你的应用，自动模拟出一摸一样的运行环境，不管是在 Windows/Mac/Linux。
-![img](一、Docker 简介和安装.assets/1690956022572-5213226e-0982-4bdf-946e-1d858dcfdfef.png)
+![img](image/1690956022572-5213226e-0982-4bdf-946e-1d858dcfdfef.png)
 
 ### Docker 部署的优势
 
@@ -54,11 +54,11 @@ Docker 是一个应用打包、分发、部署的工具
 ### 启动报错解决
 
 报错截图
-![img](一、Docker 简介和安装.assets/1690956022430-16190644-d642-46e4-bc90-17affaf4993f.png)
+![img](image/1690956022430-16190644-d642-46e4-bc90-17affaf4993f.png)
 
 **解决方法**：
 控制面板->程序->启用或关闭 windows 功能，开启 Windows 虚拟化和 Linux 子系统（WSL2)
-![img](一、Docker 简介和安装.assets/1690956022507-653688ab-c408-4a25-b819-e6328784287e.png)
+![img](image/1690956022507-653688ab-c408-4a25-b819-e6328784287e.png)
 
 **命令行安装 Linux 内核**
 wsl.exe --install -d Ubuntu
@@ -79,17 +79,17 @@ wsl.exe --set-default-version 2
 wsl.exe --list --verbose
 应该如下图，可以看到一个 Linux 系统，名字你的不一定跟我的一样，看你安装的是什么版本。
 并且 VERSION 是 2
-![img](一、Docker 简介和安装.assets/1690956022406-a7bbd19d-b868-4dd5-862d-15d01a11c671.png)
+![img](image/1690956022406-a7bbd19d-b868-4dd5-862d-15d01a11c671.png)
 
 **确保 BIOS 已开启虚拟化，下图检查是否已开启好**
 
 如果是已禁用，请在开机时按 F2 进入 BIOS 开启一下，不会设置的可以网上搜索下自己主板的设置方法，Intel 和 AMD 的设置可能稍有不同
 
-![img](一、Docker 简介和安装.assets/1690956022438-f2592a3a-58db-408c-895e-5b6de407cec5.png)
+![img](image/1690956022438-f2592a3a-58db-408c-895e-5b6de407cec5.png)
 
 **出现下图错误，点击链接安装最新版本的 WSL2**
 https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi
-![img](一、Docker 简介和安装.assets/1690956022827-ac7544a0-3dc1-404e-a9ac-a16ed84abafa.png)
+![img](image/1690956022827-ac7544a0-3dc1-404e-a9ac-a16ed84abafa.png)
 
 ### 镜像加速源
 
@@ -106,4 +106,4 @@ https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi
 
 "registry-mirrors": ["https://registry.docker-cn.com"]
 
-![img](一、Docker 简介和安装.assets/1690956023064-f80afae2-2a73-4f5d-b1d9-156c4ea7ddba.png)
+![img](image/1690956023064-f80afae2-2a73-4f5d-b1d9-156c4ea7ddba.png)

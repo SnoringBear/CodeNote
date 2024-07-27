@@ -9,7 +9,7 @@
 
 官网地址:https://jwt.io/introduction
 
-![在这里插入图片描述](JWT详细讲解.assets/cee84469bd554742aceb8fb38cea81d4.png)
+![在这里插入图片描述](image/cee84469bd554742aceb8fb38cea81d4.png)
 
 
 
@@ -31,7 +31,7 @@ eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4
 
 
 
-![在这里插入图片描述](JWT详细讲解.assets/98d3fc61aa364cefa3ec866275569377.png)
+![在这里插入图片描述](image/98d3fc61aa364cefa3ec866275569377.png)
 
 
 
@@ -121,11 +121,11 @@ HMACSHA256(
 
 下面显示了一个 JWT，该 JWT 对前一个头和有效负载进行了编码，并使用一个 secret 进行签名。
 
-![在这里插入图片描述](JWT详细讲解.assets/fe7a3884df1443329a1f35b2a7ae838c.png)
+![在这里插入图片描述](image/fe7a3884df1443329a1f35b2a7ae838c.png)
 
 真实情况,一般是在请求头里加入Authorization，并加上Bearer标注最后是JWT(格式:Authorization: Bearer **`<token>`**)：
 
-![在这里插入图片描述](JWT详细讲解.assets/2aa1d619cd3c4dbcbc0c7eb587f678a1.png)
+![在这里插入图片描述](image/2aa1d619cd3c4dbcbc0c7eb587f678a1.png)
 
 - 通过Java代码实现JWT的生成( **`使用的是JJWT框架`** )
 
@@ -176,10 +176,10 @@ public class JjwtTest {
 
 运行结果:
 
-![在这里插入图片描述](JWT详细讲解.assets/63a9833e99cb485c8f8e0723169c7bdb.png)
+![在这里插入图片描述](image/63a9833e99cb485c8f8e0723169c7bdb.png)
 
 通过官网进行解码:
-![在这里插入图片描述](JWT详细讲解.assets/869fb875ced24ff789e8fa8c05a1c2ef.png)
+![在这里插入图片描述](image/869fb875ced24ff789e8fa8c05a1c2ef.png)
 
 - 通过Java代码实现JWT的解码( **`使用的是JJWT框架`** )
 
@@ -220,7 +220,7 @@ public class JjwtTest {
 ```
 
 运行结果:
-![在这里插入图片描述](JWT详细讲解.assets/dfa2dede4fe64759979276cb6c0dba89.png)
+![在这里插入图片描述](image/dfa2dede4fe64759979276cb6c0dba89.png)
 
 - JWT工具类(**`使用的是JJWT框架`** )
 
@@ -415,7 +415,7 @@ public class JwtTokenUtil {
 #### (1) JWT工作流程
 
 下图显示了 JWT 是如何获得并用于访问 API 或资源的:
-![在这里插入图片描述](JWT详细讲解.assets/ca38eb53d0294f74b70997d7d8506c52.png)
+![在这里插入图片描述](image/ca38eb53d0294f74b70997d7d8506c52.png)
 
 1. 应用程序或客户端向授权服务器请求授权。
 2. 授予授权后，授权服务器将向应用程序返回访问令牌。
@@ -426,36 +426,36 @@ public class JwtTokenUtil {
 > 本项目JWT使用的是 **`JJWT框架`** 来实现,下图流程图来源于 [【编程不良人】JWT认证原理、流程整合springboot实战应用,前后端分离认证的解决方案!](https://www.bilibili.com/video/BV1i54y1m7cP?p=6&vd_source=5d242c523ffcdeae19faea79735ffef6),项目采用SpringBoot+mybatis实现,业务逻辑非常简单,下面截取关键代码来了解整个流程。
 
 业务流程图如下:
-![在这里插入图片描述](JWT详细讲解.assets/5da2a78200e248ada267791cfaf9b882.png)
+![在这里插入图片描述](image/5da2a78200e248ada267791cfaf9b882.png)
 登入功能通过业务层提供的login(user)方法进行登入,登入成功返回token信息,如果token信息不为null就将token信息返回给前端系统
-![在这里插入图片描述](JWT详细讲解.assets/4e333712ae41434589e0814f67b7da0a.png)
+![在这里插入图片描述](image/4e333712ae41434589e0814f67b7da0a.png)
 业务层login(User user)方法实现逻辑非常简单,就是通过查询数据库中是否存在该用户,存在表示登入成功,并通过Token工具类生成token
-![在这里插入图片描述](JWT详细讲解.assets/8ca8c7e43c5f4d87b296c6b62c0ee2de.png)
+![在这里插入图片描述](image/8ca8c7e43c5f4d87b296c6b62c0ee2de.png)
 JWT工具类中generateToken(User user)虽然接受的是user对象,但是实际只使用了user的name作为载荷( **`不要将敏感信息写入到Token中`** )
-![在这里插入图片描述](JWT详细讲解.assets/5f6782fcf9044248a800be6bd3e628d1.png)
-![在这里插入图片描述](JWT详细讲解.assets/b4b0b7ebdb084f2599cffe8e5a90b120.png)
+![在这里插入图片描述](image/5f6782fcf9044248a800be6bd3e628d1.png)
+![在这里插入图片描述](image/b4b0b7ebdb084f2599cffe8e5a90b120.png)
 
 Postman中模拟前端访问[http://localhost](http://localhost/):8086/user/login?name=test&password=123456:
-![在这里插入图片描述](JWT详细讲解.assets/efeb951d2e0b491498ec1899da3bcea9.png)
+![在这里插入图片描述](image/efeb951d2e0b491498ec1899da3bcea9.png)
 
 执行成功后前端会接受到服务器端传递过来的Token信息
-![在这里插入图片描述](JWT详细讲解.assets/75d211cd376a448aa495ea15a4b43974.png)
+![在这里插入图片描述](image/75d211cd376a448aa495ea15a4b43974.png)
 访问Api信息/资源,前端只需要将token信息保存到请求头中,发送请求到对应Api/资源即可:
-![在这里插入图片描述](JWT详细讲解.assets/66e3a4d059264f55b5bad012dbe660d8.png)
+![在这里插入图片描述](image/66e3a4d059264f55b5bad012dbe660d8.png)
 Postman模拟前端访问:[http://localhost](http://localhost/):8086/user/info?id=1
-![在这里插入图片描述](JWT详细讲解.assets/931160fd76a041989b5ca71aba719e25.png)
+![在这里插入图片描述](image/931160fd76a041989b5ca71aba719e25.png)
 至于Token的验证交给拦截器进行处理:
 
-![在这里插入图片描述](JWT详细讲解.assets/54fb23a7ccdd4a189ae3ad02aeb319a3.png)
+![在这里插入图片描述](image/54fb23a7ccdd4a189ae3ad02aeb319a3.png)
 Postman访问/info:
 
 - 访问成功
 
-![在这里插入图片描述](JWT详细讲解.assets/69e9da2dfb0e4d4090dbcdc9bbdbeb1d.png)
+![在这里插入图片描述](image/69e9da2dfb0e4d4090dbcdc9bbdbeb1d.png)
 
 - 访问失败
 
-![在这里插入图片描述](JWT详细讲解.assets/4cb7753d717d4702840c11c026121fdf.png)
+![在这里插入图片描述](image/4cb7753d717d4702840c11c026121fdf.png)
 
 ### 4.JWT的使用
 
@@ -469,13 +469,13 @@ Postman访问/info:
 
 > 单系统就是所有功能都在同一个系统上
 
-![在这里插入图片描述](JWT详细讲解.assets/f4317c4f07ec49538f4abe826cfcc2d9.png)
+![在这里插入图片描述](image/f4317c4f07ec49538f4abe826cfcc2d9.png)
 
 - **多系统**
 
 > 为了合理利用资源和降低耦合性，于是把单系统拆分成多个子系统（ **`传统基于session认证的登入设计是无法实现多系统登入的,因为session无法跨域`** ）
 
-![在这里插入图片描述](JWT详细讲解.assets/a39a10404c5b462789cf65229c55bc14.png)
+![在这里插入图片描述](image/a39a10404c5b462789cf65229c55bc14.png)
 
 - **单点登入**
 
@@ -588,7 +588,7 @@ public boolean preHandle(HttpServletRequest request, HttpServletResponse respons
 ```
 
 上面的代码可以结合下图进行理解:
-![在这里插入图片描述](JWT详细讲解.assets/2250dc07803a4c61a0012d75bf683684.png)
+![在这里插入图片描述](image/2250dc07803a4c61a0012d75bf683684.png)
 
 基于session认证的登入系统存在的问题:
 
@@ -611,7 +611,7 @@ public boolean preHandle(HttpServletRequest request, HttpServletResponse respons
 > 基于token的鉴权机制类似于http协议也是无状态的，它不需要在服务端去保留用户的认证信息或者会话信息。这就意味着基于token认证机制的应用不需要去考虑用户在哪一台服务器登录了，这就为应用的扩展提供了便利。
 
 实际流程如下（ **`对应项目demo前面已经简述了,这里不在叙述`** ）:
-![在这里插入图片描述](JWT详细讲解.assets/5da2a78200e248ada267791cfaf9b882.png)
+![在这里插入图片描述](image/5da2a78200e248ada267791cfaf9b882.png)
 
 #### (2) Information Exchange(信息交换)
 
@@ -629,4 +629,4 @@ public boolean preHandle(HttpServletRequest request, HttpServletResponse respons
 - 关于使用，JWT 是在 Internet 规模上使用的。这突出了在多个平台(尤其是移动平台)上对 JSON Web 令牌进行客户端处理的便利性。
 
 下图就是JWT和SAML长度的比较:
-![在这里插入图片描述](JWT详细讲解.assets/5db648e18d6a4ee1ba08c51588145efe.png)
+![在这里插入图片描述](image/5db648e18d6a4ee1ba08c51588145efe.png)

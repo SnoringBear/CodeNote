@@ -46,7 +46,7 @@ fd = socket(AF_INET,SOCK_STREAM,0);
 
 在定义了 socket 之后，我们就可以愉快的对这个 socket 进行操作，比如用 bind () 绑定 IP 端口，用 connect () 发起建连。
 
-![img](既然有 HTTP 协议，为什么还要有 RPC.assets/1690949127914-e5e5c107-4998-4bd9-93e7-f9d2387e598f.gif)
+![img](image/1690949127914-e5e5c107-4998-4bd9-93e7-f9d2387e598f.gif)
 
 
 
@@ -72,7 +72,7 @@ fd = socket(AF_INET,SOCK_STREAM,0);
 
 八股文常背，TCP 是有三个特点，**面向连接**、**可靠**、基于**字节流**。
 
-![img](既然有 HTTP 协议，为什么还要有 RPC.assets/1690949154516-07325545-ea1a-476c-ad20-3379b07ba449.png)
+![img](image/1690949154516-07325545-ea1a-476c-ad20-3379b07ba449.png)
 
 ▲ TCP 是什么
 
@@ -84,7 +84,7 @@ fd = socket(AF_INET,SOCK_STREAM,0);
 
 
 
-![img](既然有 HTTP 协议，为什么还要有 RPC.assets/1690949178435-e940af38-60b1-43c7-9001-f10ec7e7fe04.png)
+![img](image/1690949178435-e940af38-60b1-43c7-9001-f10ec7e7fe04.png)
 
 ▲ 01 二进制字节流
 
@@ -92,7 +92,7 @@ fd = socket(AF_INET,SOCK_STREAM,0);
 
 
 
-![img](既然有 HTTP 协议，为什么还要有 RPC.assets/1690949207250-62437eaf-8569-432f-8e7c-89cf13f00d6a.png)
+![img](image/1690949207250-62437eaf-8569-432f-8e7c-89cf13f00d6a.png)
 
 ▲ 消息对比
 
@@ -104,7 +104,7 @@ fd = socket(AF_INET,SOCK_STREAM,0);
 
 
 
-![img](既然有 HTTP 协议，为什么还要有 RPC.assets/1690949250367-c8502ddc-d751-4b76-8f00-1f65d88fff8b.png)
+![img](image/1690949250367-c8502ddc-d751-4b76-8f00-1f65d88fff8b.png)
 
 
 
@@ -130,7 +130,7 @@ fd = socket(AF_INET,SOCK_STREAM,0);
 
 我们回过头来看网络的分层图。
 
-![img](既然有 HTTP 协议，为什么还要有 RPC.assets/1690949272293-503f1a77-a300-4298-a0b3-cf7456e109df.png)
+![img](image/1690949272293-503f1a77-a300-4298-a0b3-cf7456e109df.png)
 
 
 
@@ -140,7 +140,7 @@ fd = socket(AF_INET,SOCK_STREAM,0);
 
 **HTTP** 协议（**H**yper **T**ext **T**ransfer **P**rotocol），又叫做**超文本传输协议**。我们用的比较多，平时上网在浏览器上敲个网址就能访问网页，这里用到的就是 HTTP 协议。
 
-![img](既然有 HTTP 协议，为什么还要有 RPC.assets/1690949297078-d2fe4ead-2262-4dc2-b46a-d7229ab9e626.png)
+![img](image/1690949297078-d2fe4ead-2262-4dc2-b46a-d7229ab9e626.png)
 
 ▲ HTTP 调用
 
@@ -164,7 +164,7 @@ fd = socket(AF_INET,SOCK_STREAM,0);
  res = remoteFunc(req)
 ```
 
-![img](既然有 HTTP 协议，为什么还要有 RPC.assets/1690949359386-93131229-4873-4d1d-9b1e-5b4779b93abb.png)
+![img](image/1690949359386-93131229-4873-4d1d-9b1e-5b4779b93abb.png)
 
 ▲ RPC 可以像调用本地方法那样调用远端方法
 
@@ -172,7 +172,7 @@ fd = socket(AF_INET,SOCK_STREAM,0);
 
 值得注意的是，虽然大部分 RPC 协议底层使用 TCP，但实际上**它们不一定非得使用 TCP，改用 UDP 或者 HTTP，其实也可以做到类似的功能。**
 
-![img](既然有 HTTP 协议，为什么还要有 RPC.assets/1690949387518-96a738bd-0525-4ca6-8b4e-f1da7ef60153.png)
+![img](image/1690949387518-96a738bd-0525-4ca6-8b4e-f1da7ef60153.png)
 
 
 
@@ -260,7 +260,7 @@ fd = socket(AF_INET,SOCK_STREAM,0);
 
 
 
-![img](既然有 HTTP 协议，为什么还要有 RPC.assets/1690949417481-48bb555f-5228-4461-8816-49f02dacfadd.png)
+![img](image/1690949417481-48bb555f-5228-4461-8816-49f02dacfadd.png)
 
 ▲connection_pool
 
@@ -278,7 +278,7 @@ fd = socket(AF_INET,SOCK_STREAM,0);
 
 这个将结构体转为二进制数组的过程就叫**序列化**，反过来将二进制数组复原成结构体的过程叫**反序列化**。
 
-![img](既然有 HTTP 协议，为什么还要有 RPC.assets/1690949450570-8f5de456-3ae1-4ae4-ac9f-916196bfcdbe.png)
+![img](image/1690949450570-8f5de456-3ae1-4ae4-ac9f-916196bfcdbe.png)
 
 ▲ 序列化和反序列化
 
@@ -288,7 +288,7 @@ fd = socket(AF_INET,SOCK_STREAM,0);
 
 
 
-![img](既然有 HTTP 协议，为什么还要有 RPC.assets/1690949477378-4d77519b-ad38-417a-81a5-e23a93f01f91.png)
+![img](image/1690949477378-4d77519b-ad38-417a-81a5-e23a93f01f91.png)
 
 
 
@@ -300,11 +300,11 @@ fd = socket(AF_INET,SOCK_STREAM,0);
 
 
 
-![img](既然有 HTTP 协议，为什么还要有 RPC.assets/1690949503796-4ab9ed6a-0476-43de-b52e-fde5ca99c8fe.png)
+![img](image/1690949503796-4ab9ed6a-0476-43de-b52e-fde5ca99c8fe.png)
 
  ▲ HTTP 原理  
 
-![img](既然有 HTTP 协议，为什么还要有 RPC.assets/1690949526856-d713add6-118c-4fcb-a963-559fbf54ee79.png)
+![img](image/1690949526856-d713add6-118c-4fcb-a963-559fbf54ee79.png)
 
 ▲ RPC 原理
 

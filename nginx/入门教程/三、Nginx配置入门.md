@@ -2,9 +2,9 @@
 
 在Nginx的安装目录下有一个conf文件夹，打开其中的nginx.conf文件
 
-![img](三、Nginx配置入门.assets/1690640599702-37b6eb67-614b-41a7-a079-feee42015339.jpeg)
+![img](image/1690640599702-37b6eb67-614b-41a7-a079-feee42015339.jpeg)
 
-![img](三、Nginx配置入门.assets/1690640628976-93abead2-0ef0-49e1-8452-8dbf192f34d7.jpeg)
+![img](image/1690640628976-93abead2-0ef0-49e1-8452-8dbf192f34d7.jpeg)
 
 
 
@@ -16,7 +16,7 @@
 
 注意：每一行的配置都需要以封号结尾！！！
 
-![img](三、Nginx配置入门.assets/1690640851643-49849986-2472-4ee7-9165-1ab7e782b87e.jpeg)
+![img](image/1690640851643-49849986-2472-4ee7-9165-1ab7e782b87e.jpeg)
 
 
 
@@ -28,4 +28,4 @@
 
 
 
-![img](三、Nginx配置入门.assets/1690640971850-ed8616f5-0752-4a38-a047-ec6b4c05f7d4.jpeg)
+![img](image/1690640971850-ed8616f5-0752-4a38-a047-ec6b4c05f7d4.jpeg)

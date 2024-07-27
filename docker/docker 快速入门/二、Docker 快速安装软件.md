@@ -24,12 +24,12 @@ Redis 官网：https://redis.io/
 官网下载安装教程只有源码安装方式，没有 Windows 版本。想要自己安装 windows 版本需要去找别人编译好的安装包。
 
 Docker 官方镜像仓库查找 Redis ：https://hub.docker.com/
-![img](二、Docker 快速安装软件.assets/1690956074410-c47c11e5-54a4-4c6f-a573-3616072ba910.png)
+![img](image/1690956074410-c47c11e5-54a4-4c6f-a573-3616072ba910.png)
 
 一个命令跑起来：docker run -d -p 6379:6379 --name redis redis:latest
 命令参考：https://docs.docker.com/engine/reference/commandline/run/
 
-![img](二、Docker 快速安装软件.assets/1690956074405-3c0161b0-c8a0-4305-958d-1c3e72c5cd2f.png)
+![img](image/1690956074405-3c0161b0-c8a0-4305-958d-1c3e72c5cd2f.png)
 
 ### 安装 Wordpress
 

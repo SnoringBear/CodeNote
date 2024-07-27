@@ -6,7 +6,7 @@
 
 
 
-![img](二、Nginx在Linux下的安装.assets/1690640219628-c606bcd4-bb9f-4a06-b6de-2146385c33c3.jpeg)
+![img](image/1690640219628-c606bcd4-bb9f-4a06-b6de-2146385c33c3.jpeg)
 
 
 
@@ -14,20 +14,20 @@
 
 上传tar包至服务器后，解压到当前目录
 
-![img](二、Nginx在Linux下的安装.assets/1690640302062-ffab96b1-c3fa-46cb-9440-fe0cf56d044c.jpeg)
+![img](image/1690640302062-ffab96b1-c3fa-46cb-9440-fe0cf56d044c.jpeg)
 
 进入解压后的目录，执行configure脚本
 
-![img](二、Nginx在Linux下的安装.assets/1690640346831-f96f2c8d-7169-4314-a1d4-248142523740.jpeg)
+![img](image/1690640346831-f96f2c8d-7169-4314-a1d4-248142523740.jpeg)
 
 使用make命令进行安装
 
-![img](二、Nginx在Linux下的安装.assets/1690640425315-a3cd62d8-0827-4089-8c35-91db897cbf15.jpeg)
+![img](image/1690640425315-a3cd62d8-0827-4089-8c35-91db897cbf15.jpeg)
 
 安装完成后，使用whereis命令查找Nginx的安装位置 (默认安装在/user/local/目录下)
 
-![img](二、Nginx在Linux下的安装.assets/1690640460859-777827d2-0748-4499-af95-09ee6ef65b40.jpeg)
+![img](image/1690640460859-777827d2-0748-4499-af95-09ee6ef65b40.jpeg)
 
 进入安装目录下的bin文件夹，启动nginx服务，访问服务器默认的80端口查看是否安装成功！
 
-![img](二、Nginx在Linux下的安装.assets/1690640501113-33049a6a-a571-4bf8-93ce-e44b8e9c22e5.jpeg)
+![img](image/1690640501113-33049a6a-a571-4bf8-93ce-e44b8e9c22e5.jpeg)

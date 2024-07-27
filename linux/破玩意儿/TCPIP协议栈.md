@@ -1,6 +1,6 @@
  每层都有相应的协议，如下图  
 
-![img](TCPIP协议栈.assets/1690954464243-abd31afd-be13-42e8-93e4-1b94960c8645.jpeg)
+![img](image/1690954464243-abd31afd-be13-42e8-93e4-1b94960c8645.jpeg)
 
 **IP：**
 
@@ -24,7 +24,7 @@
 
 
 
-![img](TCPIP协议栈.assets/1690954495896-a4792bff-4926-4eff-a150-b2558a867e78.jpeg)
+![img](image/1690954495896-a4792bff-4926-4eff-a150-b2558a867e78.jpeg)
 
 
 
