@@ -1,4 +1,4 @@
-# 一**、Hotspot的目录结构**
+# Hotspot的目录结构
 ```java
 
 
