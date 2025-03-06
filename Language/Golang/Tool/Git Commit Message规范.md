@@ -111,8 +111,8 @@ idea可以安装代码提交规范的插件。
 
 1. 安装插件
 
-![1671184341406.jpg](Git Commit Message规范.assets/55kunib7ikcu2_eef7ba42ee9c4b4a8012ce9993690669.jpg)2.提交时选择插件提交
+![1671184341406.jpg](image/55kunib7ikcu2_eef7ba42ee9c4b4a8012ce9993690669.jpg)2.提交时选择插件提交
 
-![1671184348734.jpg](Git Commit Message规范.assets/55kunib7ikcu2_32860b9ee75549688a37a78eb8f854f3.jpg)
+![1671184348734.jpg](image/55kunib7ikcu2_32860b9ee75549688a37a78eb8f854f3.jpg)
 
-![1671184355558.jpg](Git Commit Message规范.assets/55kunib7ikcu2_f2b9c065e1514dd6afe1bf3e51613519.jpg)
+![1671184355558.jpg](image/55kunib7ikcu2_f2b9c065e1514dd6afe1bf3e51613519.jpg)
