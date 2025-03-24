@@ -49,11 +49,9 @@ Java 程序的调试会话可以通过以下方式启动：
 
 示例：
 
-bash
 
-复制
 
-```
+```bash
 java -agentlib:jdwp=transport=dt_socket,server=y,suspend=y,address=5005 MyApp
 ```
 
