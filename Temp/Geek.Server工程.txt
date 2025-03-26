@@ -1,0 +1,48 @@
+Geek.Server
+
+
+两个Actor
+
+	Server   全局唯一
+
+	Role   每一个玩家一个
+
+
+
+actor调用
+	例子
+		//登陆流程
+        var roleComp = await ActorMgr.GetCompAgent<RoleCompAgent>(roleId);
+        //从登录线程-->调用Role线程 所以需要入队
+        var resLogin = await roleComp.OnLogin(reqLogin, isNewRole);
+
+
+
+
+网络框架
+	asp.net默认的Kestrel服务器
+		tcp
+			TcpServer
+			TcpConnectionHandler
+		Rpc
+
+		http
+			HttpServer
+			HttpHandler
+
+
+
+
+gen config 
+
+	D:\ServerFrameworkV2\client\trunk\Config
+
+
+gen proto
+	c# define proto [MessagePackObject(true)]
+	D:\ServerFrameworkV2\client\trunk\Message
+
+
+gen code
+
+	Geek.Server.CodeGenerator

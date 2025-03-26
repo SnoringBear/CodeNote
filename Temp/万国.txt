@@ -1,0 +1,51 @@
+万国
+
+
+
+actor之间调用
+
+	1、例子：MSM.ActivityRoleMgr[rallyRid].req.setActivitySchedule
+
+	本质就是：local obj = snax.newservice	obj.post.hello或者obj.req.hello
+
+
+
+	2、创建actor服务：snax.newservice、snax.uniqueservice、snax.queryservice
+		调用  obj.post.hello或者obj.req.hello
+
+
+
+	3、skynet.send     skynet.call【skynet.ret返回、skynet.pack()打包】
+	skynet.uniqueservice 创建actor服务
+
+
+
+
+client连接
+
+
+
+
+
+
+
+架构
+
+	client -> login [分配game]
+
+	client -> game [连接其他节点]
+
+
+
+
+
+login
+
+	Logind.login(server) -> LoginGate.login(conf) -> LoginGate.launch_slave(auth_handler)【skynet.dispatch->auth_fd(fd, addr)->
+	auth(fd)】->Logind.auth_handler(token)->Logind.authToken(token)->AccountMgr.AuthIGGID
+
+
+Game
+
+	Client ->RoleGetRoleList
+	Client ->RoleLogin

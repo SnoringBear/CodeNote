@@ -1,0 +1,391 @@
+蘑菇
+
+	体育
+	音乐
+	休闲【自己鼓捣】
+	卡牌
+	养成
+	塞车
+	射击FPS
+	moba
+	策略SLG
+	冒险AVG
+	动作ACT
+	RPG类
+		rpg:
+			玩法多样，可以是回合制、即时战斗等
+			剧情丰富，注重角色成长和故事叙述
+			玩家通常独自或与少数几个朋友一起完成任务和挑战
+			社交互动相对较少，主要局限于玩家与NPC（非玩家角色）之间的互动
+			即使有多人模式，也通常局限于小范围的合作或竞争
+
+		mmorpg:
+			强调实时战斗和野外探险
+			玩家可以在游戏中与其他玩家组队、交易、聊天，甚至参与大规模的PvP（玩家对战玩家）战斗
+			游戏世界动态变化，玩家的行为会影响游戏环境和其他玩家的体验
+			社交互动是MMORPG的核心之一
+			玩家可以结识新朋友、加入公会或团队、参与社交活动（如婚礼、庆典等）
+			游戏中的社交系统通常非常完善，包括好友系统、聊天系统、交易系统等
+
+
+
+rpg:
+
+跨服排行
+
+挑战非跨服状态玩家：
+
+
+Time
+
+	lombok 
+
+
+
+	跨 日 周  月
+
+
+	是否是同  一天   一周    一月
+
+	是否是本   天    周       月
+
+
+
+	月的第几天
+	年的第几月
+	是第几年
+
+
+	时间格式转换
+
+
+
+
+
+
+
+充值
+
+recharge
+	ctrl
+		RechargeCtrl
+			reqRecharge
+
+
+		RechargeHttpCmd
+			recharge.gmForceFinishOrder
+
+
+
+
+
+
+
+rechargeId			goodsType		goodsParam
+
+
+
+Client ->Server【返回平台充值url】->Client->平台->Server
+
+
+
+
+魔亚SDK
+	登录：
+		MoYaLogin.login
+
+
+		RechargeCtrl.reqRecharge->RechargeLogic.request->AShopPayScript.request->ASdkPayScript【MoYaRecharge】.request->Client->平台
+
+
+
+	回调：
+		MoYaHttp.recharge->RechargeLogic.callback->ASdkPayScript.callback->RechargeLogic.callbackFinish->new RechargeOffline().submit->RechargeLogic.offline【provideRecharge、provideRecharge】
+
+
+		MoYaUtil.genHttpMessage
+
+
+
+
+
+
+
+
+
+
+聊天
+
+	玩家:
+
+		发送聊天->{
+			message.Chat.ReqSendChat
+			ChatUtil.send【好友私聊】 :Map<Long, ChatFriendRole> chatRoles // 好友聊天角色集合<角色id,好友聊天角色>
+			ChatUtil.submitCross【根据聊天频道判断是否跨服】、
+			ChatUtil.submitLocal
+			ChatUtil.sendChatMonitor  
+		}
+		分享->{
+			message.Chat.ReqShare
+			ChatUtil.send
+			ChatUtil.submitCross【根据聊天频道判断是否跨服】、
+			ChatUtil.submitLocal
+			ChatUtil.sendChatMonitor
+		}
+
+
+		
+		
+
+
+	系统:
+
+		公告->ChatUtil.fastLocalTemplate【本地】
+		ChatUtil.submitLocal
+
+
+
+
+
+	ChatUtil.submitLocal：
+		ConcurrentHashMap<ChatChannelType, Map<Long, FixedSafetyQueue<ChatSuperMsg>>> chatQueueMap   // 聊天队列集合
+			->add
+			->玩家登录的时候推送全部消息
+			->推送趣味答题消息记录
+		
+		ConcurrentLinkedQueue<ChatSuperMsg> saves
+			-> add 
+			-> DChannelChatDao->重启服务器的时候加载到chatQueueMap
+
+
+		推送
+			直接发送【自己】
+			ConcurrentHashMap<Long, ConcurrentLinkedQueue<message.Chat.ChatMessage>> rolePushMap
+				->定时推送玩家
+
+
+
+
+
+
+
+
+
+enhance系列
+
+
+
+
+
+
+
+
+
+
+
+异步扫描所有class
+	CommonModule  module.component.component
+
+
+加载配置
+
+
+
+热更
+
+
+
+线程池设计
+
+
+
+
+开发命令服务Cmd
+	守护线程
+	命令扫描:new Scanner(System.in)
+
+
+
+http服务
+
+
+
+
+tcp服务：
+	包长度+时间+序列号+       消息号+消息数据 ?
+	IEnhanceInvoke?  IEnhanceInvokeSimple?
+
+
+
+rpc服务
+
+
+
+定时器【全局定时器、业务定时器】
+
+
+
+数据库
+
+
+
+停服回调
+
+
+
+Event事件
+	key:Handler【扫描添加】
+
+
+
+全局总线:SerialLine
+	启动模块服务	init
+	回存数据库定时器 【保存业务数据】  saveDb
+	空闲时间定时器【空闲时间定时器::任务】
+	跨天定时器
+
+
+
+
+
+
+
+GameServer:req-> player SerialLine
+
+rpc:直接提交并行线程池
+
+
+
+
+
+
+
+
+
+GM
+
+	ReflectUtil.invoke对比enhance
+	ReflectUtil.invoke(meta.obj, meta.method, params) ,params 需要对应的参数
+
+
+
+
+GmHttp
+	server->close
+	player->close	
+
+
+GmBus
+	init()
+		load()
+	submit()
+
+
+
+GmCtrl
+其他功能模块的GM注解方法
+
+
+
+
+
+hotswap
+
+
+
+
+
+LNumber:处理小数点精度问题
+
+
+	long -> LNumber
+		LNumber.create
+
+
+
+
+
+
+
+技能
+
+	Map<key,value> ->List<Map.Entry<key,Value>>
+
+	组别id	保底id	保底次数
+
+	技能升级表
+		升级id	技能id	升级消耗		拥有效果【属性+万分比】   属性生效范围	战力
+
+	技能功能概述
+		拥有的技能
+		技能方案【多个】
+			方案：
+				解锁的技能槽数量【所有方案统一】：从拥有的技能里面选择装配
+
+	技能抽卡
+		消耗砖石或物品->物品->物品自动使用【RoleSkillItemScript】->产生技能
+
+	强化技能
+		消耗砖石或物品->消耗道具
+
+	合成技能
+		主动技能		满级		消耗物品->抽取特定的物品【猜想为产生新技能的物品】
+
+	一键装配
+		前端【技能列表】	方案id
+
+	装配
+		同伴id[为0表示卸载技能]	替换技能下标		方案id
+
+
+
+
+
+
+属性计算
+	AttrRefresh
+
+
+	TeamManager
+		阵容集合(阵容类型,行装ID),简化数据不要直接读取
+		行装集合(行装ID,行装数据),简化数据不要直接读取
+			行装数据
+				方案集合(成长类型,方案ID),方案ID小于0表示无需读取,简化数据不要直接读取
+		完整行装
+			完整的阵容数据(阵容类型,行装ID)
+			完整的阵容数据(行装ID,[阵容类型])
+			完整的行装数据(行装ID,(成长类型,方案ID))
+			完整的行装数据(成长类型,(方案ID,[行装ID]))
+
+		行装整体数据包
+			全局成长数据包集合(成长类型,成长数据包)
+			方案成长数据包集合(成长类型,(方案ID,成长数据包))
+
+		最终数据包
+			主角属性集合
+			主动技能属性集合(主动技能id,属性集合)
+			同伴属性集合(同伴id,属性集合)
+			主角被动技能集合
+			战力
+
+
+		阵容类型？行装ID？成长类型？
+
+	TeamData
+		阵容集合(阵容类型,行装ID),简化数据不要直接读取
+		行装集合(行装ID,行装数据),简化数据不要直接读取
+			行装数据
+				方案集合(成长类型,方案ID),方案ID小于0表示无需读取,简化数据不要直接读取
+
+
+
+
+
+Player1->notifyChanged:{managers->{notifyChanged}} ?  大规模调用的合理性
+
+
+
+
+
+Fight
+	
