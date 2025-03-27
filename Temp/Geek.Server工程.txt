@@ -1,20 +1,27 @@
 Geek.Server
 
+actor
 
-两个Actor
+	
+	组成：
+		Actor：ConcurrentDictionary<Type, BaseComp> compDic
+		XXCompAgent【持有XXComp对象】,
+		XXComp【持有XXState对象,获取XXCompAgent的时候,加载XXState数据】,
+		XXState【数据】
 
-	Server   全局唯一
+	
+	两种Actor
+		Server   全局唯一
+		Role   每一个玩家一个
 
-	Role   每一个玩家一个
 
 
-
-actor调用
-	例子
-		//登陆流程
-        var roleComp = await ActorMgr.GetCompAgent<RoleCompAgent>(roleId);
-        //从登录线程-->调用Role线程 所以需要入队
-        var resLogin = await roleComp.OnLogin(reqLogin, isNewRole);
+	actor调用
+		例子
+			//登陆流程
+        	var roleComp = await ActorMgr.GetCompAgent<RoleCompAgent>(roleId);
+        	//从登录线程-->调用Role线程 所以需要入队
+        	var resLogin = await roleComp.OnLogin(reqLogin, isNewRole);
 
 
 
