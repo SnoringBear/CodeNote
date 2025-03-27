@@ -2,10 +2,8 @@ Geek.Server
 
 
 两个Actor
-
 	Server   全局唯一
-
-	Role   每一个玩家一个
+	Role   	 每一个玩家一个
 
 
 
@@ -21,10 +19,15 @@ actor调用
 
 网络框架
 	asp.net默认的Kestrel服务器
-		tcp
+		TCP
 			TcpServer
-			TcpConnectionHandler
+			TcpConnectionHandler【AppTcpConnectionHandler】
+				OnConnectedAsync
+
+		
 		Rpc
+
+		
 
 		http
 			HttpServer
