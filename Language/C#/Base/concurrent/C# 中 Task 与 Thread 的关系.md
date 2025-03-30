@@ -2,6 +2,8 @@
 
 Task 和 Thread 都是 C# 中用于实现并发和多线程编程的机制，但它们属于不同的抽象层次，有着不同的设计理念和使用场景。
 
+
+
 ## 1. 基本概念对比
 
 | 特性         | Thread (线程)                | Task (任务)                    |
@@ -12,6 +14,8 @@ Task 和 Thread 都是 C# 中用于实现并发和多线程编程的机制，但
 | **返回值**   | 无直接支持                   | 支持返回值(Task<TResult>)      |
 | **异常处理** | 较复杂                       | 通过AggregateException集中处理 |
 
+
+
 ## 2. 底层关系
 
 - **Task 基于线程池(ThreadPool)**：大多数 Task 在线程池线程上执行
@@ -21,13 +25,11 @@ Task 和 Thread 都是 C# 中用于实现并发和多线程编程的机制，但
   - 可能是同步代码(在当前线程运行)
 - **一个线程可以执行多个 Task**：线程池线程会重复利用
 
+
+
 ## 3. 创建方式对比
 
-csharp
-
-复制
-
-```
+```csharp
 // 创建线程
 Thread thread = new Thread(() => {
     Console.WriteLine("线程执行");
@@ -39,6 +41,8 @@ Task task = Task.Run(() => {
     Console.WriteLine("Task执行");
 });
 ```
+
+
 
 ## 4. 执行模型差异
 
@@ -52,6 +56,8 @@ Task task = Task.Run(() => {
   - 支持异步/await模式
   - 支持任务延续(ContinueWith)
   - 支持取消令牌(CancellationToken)
+
+
 
 ## 5. 何时使用哪种
 
@@ -70,13 +76,11 @@ Task task = Task.Run(() => {
 - 需要利用并行库(Parallel, PLINQ)
 - 大多数现代.NET应用场景
 
+
+
 ## 6. 性能考虑
 
-csharp
-
-复制
-
-```
+```csharp
 // 创建1000个线程 - 性能差
 for(int i = 0; i < 1000; i++) {
     new Thread(() => Thread.Sleep(1000)).Start();
@@ -90,13 +94,11 @@ for(int i = 0; i < 1000; i++) {
 Task.WaitAll(tasks.ToArray());
 ```
 
+
+
 ## 7. 相互转换
 
-csharp
-
-复制
-
-```
+```csharp
 // Thread中执行Task
 new Thread(() => {
     Task.Run(() => Console.WriteLine("Task在线程中运行")).Wait();
@@ -110,6 +112,8 @@ Task.Run(() => {
 });
 ```
 
+
+
 ## 8. 最佳实践建议
 
 1. 现代C#代码优先使用Task
@@ -120,11 +124,7 @@ Task.Run(() => {
 
 4. 长时间运行的操作考虑使用LongRunning选项：
 
-   csharp
-
-   复制
-
-   ```
+   ```csharp
    Task.Factory.StartNew(() => {
        // 长时间操作
    }, TaskCreationOptions.LongRunning);
