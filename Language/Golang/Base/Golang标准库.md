@@ -4,12 +4,16 @@
 
 signal.Notify 是Go标准库 os/signal 包中的一个函数，用于注册信号监听器
 
+
+
 ##### 1、常用信号类型
 
 * syscall.SIGHUP 是挂断信号（Hangup），通常在终端断开连接时发送给进程
 * syscall.SIGQUIT 是退出请求信号（Quit），通常由用户按下 Ctrl+\ 发送，生成核心转储后退出进程
 * syscall.SIGTERM 是终止信号（Termination），温和地请求进程终止，可以被捕获和处理
 * syscall.SIGINT 是中断信号（Interrupt），通常由用户按下 Ctrl+C 发送，也请求进程终止。
+
+
 
 ##### 2、代码示例
 
